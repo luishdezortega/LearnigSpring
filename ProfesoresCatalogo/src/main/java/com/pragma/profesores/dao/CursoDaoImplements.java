@@ -21,7 +21,7 @@ public class CursoDaoImplements extends AbstractSession implements CursoDao {
 			getSession().delete(curso);
 		}
 	}
-
+ 
 	@Override
 	public void actualizarCurso(Curso curso) {
 		// TODO Auto-generated method stub
