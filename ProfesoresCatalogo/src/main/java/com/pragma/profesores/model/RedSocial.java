@@ -33,7 +33,6 @@ public class RedSocial implements Serializable{
 	@Column(name="icon")
 	private String icono_RS;
 	
-	
 	@OneToMany
 	@JoinColumn(name="id_social_media")
 	private Set<ProfesorSocial> profesor_social;

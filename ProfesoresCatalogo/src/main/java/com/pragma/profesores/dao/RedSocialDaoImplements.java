@@ -38,7 +38,6 @@ public class RedSocialDaoImplements extends AbstractSession implements RedSocial
 
 	@Override
 	public List<RedSocial> lisarTodasLasRS() {
-		// TODO Auto-generated method stub
 		return getSession().createQuery("from RedSocial").list();
 	}
 
