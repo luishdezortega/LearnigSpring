@@ -23,7 +23,7 @@ public class DataBaseConfiguration {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setDataSource(dataSource());
-		sessionFactoryBean.setPackagesToScan("com.pragma.profespres.model");
+		sessionFactoryBean.setPackagesToScan("com.pragma.profesores.model");
 		sessionFactoryBean.setHibernateProperties(hibernateProperties());
 		
 		return sessionFactoryBean;

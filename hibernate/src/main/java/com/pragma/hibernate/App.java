@@ -8,6 +8,7 @@ import com.pragma.hibernate.dao.ProfesorDaoImPlements;
 import com.pragma.hibernate.model.Profesor;
 
 
+
 /**
  * Hello world!
  *
@@ -23,6 +24,7 @@ public class App
       ProfesorDaoImPlements profeDao = new ProfesorDaoImPlements();
       profeDao.guardarProfesor(profe);
       
+   
      
       List<Profesor> profes = profeDao.listarProfes();
       
