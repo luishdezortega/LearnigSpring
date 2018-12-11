@@ -3,12 +3,17 @@ package com.pragma.profesores.dao;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.pragma.profesores.model.Profesor;
 import com.pragma.profesores.model.ProfesorSocial;
 
 
 
-
+@Repository
+@Transactional
 public class ProfesorDaoImPlements extends AbstractSession implements ProfesorDao {
 	
 	

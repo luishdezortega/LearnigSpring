@@ -2,9 +2,16 @@ package com.pragma.profesores.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.pragma.profesores.model.Curso;
 import com.pragma.profesores.model.Profesor;
 
+
+@Repository
+@Transactional
 public class CursoDaoImplements extends AbstractSession implements CursoDao {
 
 	@Override

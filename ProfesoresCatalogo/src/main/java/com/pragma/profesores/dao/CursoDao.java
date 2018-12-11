@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.pragma.profesores.model.Curso;
 
+
 public interface CursoDao {
 
 	

@@ -2,10 +2,17 @@ package com.pragma.profesores.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.pragma.profesores.model.Curso;
 import com.pragma.profesores.model.ProfesorSocial;
 import com.pragma.profesores.model.RedSocial;
 
+
+@Repository
+@Transactional
 public class RedSocialDaoImplements extends AbstractSession implements RedSocialDao {
 
 	@Override
