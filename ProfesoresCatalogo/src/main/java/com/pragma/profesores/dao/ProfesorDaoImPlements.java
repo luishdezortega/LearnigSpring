@@ -1,8 +1,10 @@
 package com.pragma.profesores.dao;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.pragma.profesores.model.Profesor;
+import com.pragma.profesores.model.ProfesorSocial;
 
 
 
@@ -20,6 +22,15 @@ public class ProfesorDaoImPlements extends AbstractSession implements ProfesorDa
 		
 		Profesor profe = buscarProfeID(id_Profesor);
 		if(profe != null) {
+			
+			Iterator<ProfesorSocial> i = profe.getProfesor_social().iterator();
+			while(i.hasNext()) {
+				ProfesorSocial profesorSocial = i.next();
+				i.remove();
+				getSession().delete(profesorSocial);
+			}
+			
+			profe.getProfesor_social().clear();
 			getSession().delete(profe);
 		}
 	}

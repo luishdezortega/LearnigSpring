@@ -16,4 +16,9 @@ public interface CursoDao {
 	List<Curso> listarTodos();
 	
 	Curso buscarPorID(Long idCurso);
+	
+	Curso buscarPorNombre(String nombre);
+	
+	List<Curso> buscarPorProfe(Long idProfesor);
+	
 }

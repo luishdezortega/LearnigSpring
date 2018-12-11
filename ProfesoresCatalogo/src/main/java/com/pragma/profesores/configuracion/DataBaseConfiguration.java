@@ -30,8 +30,12 @@ public class DataBaseConfiguration {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://:3306/bd_original");
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://:3306/bd_original"
+				+ "?useUnicode=true"
+				+ "&useJDBCCompliantTimezoneShift=true"
+				+ "&useLegacyDatetimeCode=false"
+				+ "&serverTimezone=UTC");
 		dataSource.setUsername("luishdezortega");
 		dataSource.setPassword("Luis231995");
 		
