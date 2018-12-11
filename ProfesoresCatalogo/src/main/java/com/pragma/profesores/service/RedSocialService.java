@@ -21,4 +21,5 @@ public interface RedSocialService {
 	RedSocial buscarPorNombre(String nombre);
 	
 	ProfesorSocial buscarPorRedYProfe(Long idRedSocial, String nickname);
+	
 }
