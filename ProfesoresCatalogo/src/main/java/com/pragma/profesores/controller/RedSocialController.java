@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.pragma.profesores.model.RedSocial;
 import com.pragma.profesores.service.RedSocialService;
+import com.pragma.profesores.util.AdminError;
 
 
 @Controller
@@ -28,14 +30,35 @@ public class RedSocialController {
 	
 	//METODOS GET
 	@RequestMapping(value="/redSocial", method = RequestMethod.GET, headers = "Accept=application/json")
-	public ResponseEntity<List<RedSocial>> getRedSocial(){
-		List<RedSocial> redSocial = new ArrayList<>();
-		redSocial = redSocialService.lisarTodasLasRS();
-		if(redSocial.isEmpty()) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
-		}
+	public ResponseEntity<List<RedSocial>> getRedSocial(@RequestParam(value="nombre", required=false) String nombre){
 		
-		return new ResponseEntity<List<RedSocial>>(redSocial, HttpStatus.OK);
+		
+		List<RedSocial> redSocial = new ArrayList<>();
+		
+		if(nombre==null) {
+			redSocial = redSocialService.lisarTodasLasRS();
+			if(redSocial.isEmpty()) {
+				return new ResponseEntity(HttpStatus.NO_CONTENT);
+			}
+			
+			return new ResponseEntity<List<RedSocial>>(redSocial, HttpStatus.OK);
+		
+		}else {
+			RedSocial auxRedSocial = redSocialService.buscarPorNombre(nombre);
+			
+			if(auxRedSocial == null) {
+				return new ResponseEntity(HttpStatus.NOT_FOUND);
+				
+		}
+			redSocial.add(auxRedSocial);
+			return new ResponseEntity<List<RedSocial>>(redSocial, HttpStatus.OK);
+	}
+		
+		
+		
+		
+		
+		
 	}
 	
 	//Metodo GET
@@ -43,7 +66,7 @@ public class RedSocialController {
 	public ResponseEntity<RedSocial> getRedSocialPorId(@PathVariable("id") Long idRedSocial){
 		
 		if(idRedSocial == null || idRedSocial <=0) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity(new AdminError("Se requiere el id de la red social"), HttpStatus.CONFLICT);
 		}
 		RedSocial redSocial = redSocialService.buscarPorID(idRedSocial);
 		
