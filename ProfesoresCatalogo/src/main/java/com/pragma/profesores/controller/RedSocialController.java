@@ -43,12 +43,12 @@ public class RedSocialController {
 	public ResponseEntity<RedSocial> getRedSocialPorId(@PathVariable("id") Long idRedSocial){
 		
 		if(idRedSocial == null || idRedSocial <=0) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		RedSocial redSocial = redSocialService.buscarPorID(idRedSocial);
 		
 		if(redSocial ==null) {
-			return new ResponseEntity(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		
 		return new ResponseEntity<RedSocial>(redSocial, HttpStatus.OK);
@@ -78,11 +78,14 @@ public class RedSocialController {
 	}
 	
 	//Metodo Update
-	@RequestMapping(value="/redSocial/{id}", method = RequestMethod.POST, headers = "Accept=application/json")
-	public ResponseEntity<?> actualizarRedSocial(@PathVariable("id)") Long id_RedSocial, @RequestBody RedSocial redSocial){
+	@RequestMapping(value="/redSocial/{id}", method = RequestMethod.PATCH, headers = "Accept=application/json")
+	public ResponseEntity<RedSocial> actualizarRedSocial(@PathVariable("id") Long id_RedSocial, @RequestBody RedSocial redSocial){
+	
+		
 		RedSocial auxRedSocial = redSocialService.buscarPorID(id_RedSocial);
+		
 		if(auxRedSocial == null) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
 		}
 		
 		auxRedSocial.setNombreRS(redSocial.getNombreRS());
@@ -94,6 +97,22 @@ public class RedSocialController {
 	}
 	
 	
+	@RequestMapping(value="/redSocial/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<?> borrarRedSocial(@PathVariable("id") Long idRedSocial){
+		
+		if(idRedSocial == null || idRedSocial <=0) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	
+		RedSocial redSocial = redSocialService.buscarPorID(idRedSocial);
+		if(redSocial == null) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		
+		redSocialService.borrarRedsocialPorID(idRedSocial);
+		return new ResponseEntity<RedSocial>(HttpStatus.OK);
+		
+	}
 	
 	
 
