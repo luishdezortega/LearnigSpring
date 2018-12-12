@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author luis.hernandez
  *
@@ -35,6 +37,7 @@ public class RedSocial implements Serializable{
 	
 	@OneToMany
 	@JoinColumn(name="id_social_media")
+	@JsonIgnore
 	private Set<ProfesorSocial> profesor_social;
 
 		
