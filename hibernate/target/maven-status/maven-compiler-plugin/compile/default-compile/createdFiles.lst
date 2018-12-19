@@ -1,0 +1,8 @@
+com\pragma\hibernate\dao\ProfesorDaoImPlements.class
+com\pragma\hibernate\model\Curso.class
+com\pragma\hibernate\App.class
+com\pragma\hibernate\dao\PlatziSession.class
+com\pragma\hibernate\dao\ProfesorDao.class
+com\pragma\hibernate\model\ProfesorSocial.class
+com\pragma\hibernate\model\RedSocial.class
+com\pragma\hibernate\model\Profesor.class

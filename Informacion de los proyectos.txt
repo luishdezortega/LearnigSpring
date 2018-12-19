@@ -1,0 +1,6 @@
+1. El proyecto hibernate funciona pero no tiene vista,
+   todo es salida por comandos, toca agregar mas metodos
+   para asi poder trabajar con todas las tablas sin
+   problemas, queda de tarea implementarle una vista.
+
+2.
