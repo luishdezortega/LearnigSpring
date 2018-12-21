@@ -1,0 +1,8 @@
+## Se Describe el Nombre de la aplicacion y se Solicita la configuracion al Servidor de Configuracion
+spring:
+  application:
+    name: MicroServiceUNo
+  cloud:
+    config:
+      uri: http://localhost:8888
+    

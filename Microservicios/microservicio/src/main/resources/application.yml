@@ -1,0 +1,11 @@
+## YAML Template.
+server:
+  port: 8888
+spring: 
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:///C:/Users/luis.hernandez/Documents/configuraciones

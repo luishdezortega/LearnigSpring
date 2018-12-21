@@ -1,6 +1,34 @@
-1. El proyecto hibernate funciona pero no tiene vista,
-   todo es salida por comandos, toca agregar mas metodos
+1. Hibernate
+   Este proyecto tiene salida por comandos y es un primer
+   acercamiento a trabajar con Spring, todo es por salida 
+   la salida de comandos, toca agregar mas metodos
    para asi poder trabajar con todas las tablas sin
    problemas, queda de tarea implementarle una vista.
 
-2.
+
+
+2.Profesor Catalogo
+  Es el acercamiento al desarollo de API es java con Spring,
+  asignando rutas y trabajando con datos de entrada y salida
+  en formato JSON. 
+
+Estos dos proyectos fueron realizados con base al curso Java EE
+de platzi. Dispoblible en: "https://platzi.com/clases/jee/
+
+3.SpringBoot 
+
+  Este es un acercamiento a nuevas plataformas e IDEs y 
+  proporciona un ejemplo de una aplicacion con backend en java y 
+  frontend en angular, la vista en anguar no corre adecuadamente,
+  por peticiones en la url se pudo comprobar el funcionamiento.
+
+https://www.youtube.com/watch?v=aSGSQ8AQ9FI
+
+
+https://www.youtube.com/watch?v=WH9_99sR7o0
+
+4. Microservicios
+ 
+  Se estan desarrollado ejemplos de microservicios basandonos en
+  los tutoriales que puedes encontrar en el siguiente link:
+https://www.youtube.com/watch?v=Pbay5lftSLQ&index=4&list=PLUpwb2Kx1_MVeBVC2KaFW4viIcdUktHn3
